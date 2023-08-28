@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\JMD.bundle.scp.css",
+      "PackagePath": "staticwebassets\\JMD.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\_about.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\_about.scss"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\_blog.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\_blog.scss"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\_contact.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\_contact.scss"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\_home.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\_home.scss"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\_order.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\_order.scss"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\css\\style.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\Group 1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Group 1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\Sept-9-Benefits-of-Group-Work_web.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Sept-9-Benefits-of-Group-Work_web.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\people-brainstorming-work-meeting.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\people-brainstorming-work-meeting.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\pexels-fox-1595391.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pexels-fox-1595391.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\pexels-ivan-samkov-5676744.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pexels-ivan-samkov-5676744.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\pexels-ludovic-delot-16420457.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pexels-ludovic-delot-16420457.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\pexels-thirdman-5256996.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pexels-thirdman-5256996.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\picture-many-business-people-working-laptop-computer-people-watching-video-pictures-about-companies-enterprises-firms.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\picture-many-business-people-working-laptop-computer-people-watching-video-pictures-about-companies-enterprises-firms.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\images\\sssss.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\sssss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.JMD.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.JMD.props",
+      "PackagePath": "build\\JMD.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.JMD.props",
+      "PackagePath": "buildMultiTargeting\\JMD.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.JMD.props",
+      "PackagePath": "buildTransitive\\JMD.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

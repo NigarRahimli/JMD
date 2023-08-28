@@ -1,0 +1,149 @@
+.section_order {
+     padding-top: 130px;
+     width: 100%;
+     height: auto;
+     margin: 0 auto;
+
+     .order_boxes {
+          width: 90%;
+          margin: 0 auto;
+
+          form {
+               input {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: transparent;
+                    border: 1px solid #D82B2B;
+                    margin-bottom: 20px; 
+                    color: #fff !important;
+               }
+
+               label {
+                    margin-bottom: 5px;
+                    color: #FFF;
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+               }
+
+
+
+
+               // .custom-select {
+               //      position: relative;
+               //      width: 100%;
+               //      padding-right: 10px;
+               //      cursor: pointer;
+               //      background-color: transparent;
+               // }
+
+
+
+
+
+
+               .boxes_bottom .active {
+                    .options {
+                         display: block;
+                         margin-top: 20px;
+                         width: 100%;
+                         border: 1px solid #D82B2B;
+
+                    }
+
+                    .textarea_input {
+                         margin-top: 170px !important;
+                         //    transition: 1s ease-in-out;
+                    }
+
+               }
+
+               .custom-select {
+                    position: relative;
+                    width: 100%;
+                    cursor: pointer;
+
+                    .selected-option {
+
+                         padding: 10px 10px 10px 10px;
+                         border: 1px solid #D82B2B;
+                    }
+
+                    i {
+                         position: absolute;
+                         top: 13px;
+                         right: 20px;
+                         color: #D82B2B;
+                         font-size: 20px;
+                    }
+
+                    .options {
+                         display: none;
+                         position: absolute;
+                         background-color: transparent;
+                         // margin:0 2px  ;
+                         width: 100%;
+                         padding: 0;
+                         height: 130px;
+
+
+
+
+
+                         .option {
+                              height: 20%;
+                              margin: 10px 15px;
+                              color: #fff;
+                         }
+                    }
+
+
+
+                    .custom-selec.active .options {
+                         display: block;
+                    }
+
+               }
+
+               .textarea_input {
+                    margin:20px 0;
+
+                    textarea {
+                         width: 100%;
+                         background: transparent;
+                         color: #FFF;
+                         padding: 20px;
+                         z-index: 20;
+                         margin-bottom: 20px;
+                         border: 1px solid #D82B2B;
+
+                    }
+                    button{
+                         font-size: 20px;
+                         width: 100%;
+                         padding: 15px;
+                         background-color: #D82B2B;
+                         border: none;
+                         color: #fff;
+                    }
+               }
+          }
+
+     }
+}
+
+@media(min-width:768px){
+     .section_order{
+          width: 70%;
+
+     }
+}
+
+@media(min-width:992px){
+     .section_order{
+          width: 30%;
+
+     }
+}
