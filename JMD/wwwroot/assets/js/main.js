@@ -16,6 +16,7 @@ remove.addEventListener("click",()=>{
    if (event.target.closest(".selected-option")) {
      const select = event.target.closest(".custom-select");
      select.classList.toggle("active");
+   
    } else {
      const allCustomSelects = document.querySelectorAll(".custom-select");
      allCustomSelects.forEach(function (select) {
@@ -24,15 +25,35 @@ remove.addEventListener("click",()=>{
    }
  });
  
- document.addEventListener("click", function (event) {
-   const option = event.target.closest(".option");
-   if (option) {
-     const allOptions = document.querySelectorAll(".option");
-     allOptions.forEach(function (opt) {
-       opt.classList.remove("active");
-     });
-     option.classList.add("active");
-     option.closest(".custom-select").querySelector(".selected-option").textContent = option.textContent;
-   }
- });
+//  document.addEventListener("click", function (event) {
+//    const option = event.target.closest(".option");
+//    if (option) {
+//      const allOptions = document.querySelectorAll(".option");
+//      allOptions.forEach(function (opt) {
+//        opt.classList.remove("active");
+//      });
+//      option.classList.add("active");
+//      option.closest(".custom-select").querySelector(".selected-option").textContent = option.textContent;
+     
+
+//    }
+//  });
+
+
+document.addEventListener("click", function(event) {
+  const option = event.target.closest(".option");
+  if (option) {
+      const customSelect = option.closest(".custom-select");
+      const allOptions = customSelect.querySelectorAll(".option");
+      allOptions.forEach(function(opt) {
+          opt.classList.remove("active");
+      });
+      option.classList.add("active");
+
+      const selectedText = option.textContent;
+
+      customSelect.querySelector(".selected-option").textContent =selectedText;
+      console.log(customSelect.querySelector(".input_value").value = selectedText); 
+  }
+});
  

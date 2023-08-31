@@ -37,16 +37,63 @@ header .navbar {
 header .navbar ul {
   text-align: center !important;
   width: 50%;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  position: relative !important;
+  padding-left: 83px;
 }
 header .navbar ul li {
   padding: 70px 0 70px 60px;
   color: #FFF;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: bolder;
   line-height: normal;
   text-align: end;
+}
+header .navbar ul li .custom-select {
+  width: 100%;
+  padding-right: 10px;
+  cursor: pointer;
+}
+header .navbar ul li .options {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  background-color: rgba(43, 43, 46, 0.7058823529);
+  width: 80px !important;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  padding: 5px 0;
+  text-align: center;
+}
+header .navbar ul li .option {
+  /* border-bottom: 1px solid #ccc; */
+  height: 20%;
+  margin: 10px 15px;
+}
+header .navbar ul li .option a {
+  color: #fff;
+}
+header .navbar ul li .custom-select.active .options {
+  display: block;
+}
+@media (max-width: 992px) {
+  header .navbar ul li .custom-select {
+    position: relative;
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    cursor: pointer;
+  }
+  header .navbar ul li .custom-select.active .options {
+    display: block;
+    width: 256px;
+    margin-top: 10px;
+  }
 }
 header .navbar svg {
   position: absolute;
@@ -66,14 +113,14 @@ header .navbar_active {
   transition: 0.7s ease-in-out;
 }
 
-.sec1 {
+.home-sec {
   padding-top: 130px;
 }
-.sec1 ul {
+.home-sec ul {
   padding: 0;
   margin: 0;
 }
-.sec1 ul li {
+.home-sec ul li {
   position: relative;
   margin: 30px 0;
   padding: 10px 69px;
@@ -81,57 +128,59 @@ header .navbar_active {
   width: 100%;
   height: 56px;
 }
-.sec1 ul li h2 {
+.home-sec ul li h2 {
   background: #231F20 !important;
   padding: 15px 0;
   font-size: 18px;
   text-align: center;
 }
-.sec1 ul li h2:hover {
-  background-color: #fff !important;
-  color: #231F20 !important;
+.home-sec ul li:hover::before {
+  background-color: #FFF;
 }
-.sec1 ul .border-1::before {
+.home-sec ul li:hover::after {
+  background-color: #FFF;
+}
+.home-sec ul .border-1::before {
   z-index: -1;
   content: "";
   position: absolute;
   left: 66px;
   top: 8px;
-  width: 44%;
+  width: 52%;
   height: 100%;
   background-color: #D82B2B;
 }
-.sec1 ul .border-1::after {
+.home-sec ul .border-1::after {
   z-index: -1;
   content: "";
   position: absolute;
   right: 66px;
   top: 8px;
-  width: 31%;
+  width: 28%;
   height: 100%;
   background-color: #fff;
 }
-.sec1 ul .border-2::before {
+.home-sec ul .border-2::before {
   z-index: -1;
   content: "";
   position: absolute;
   left: 66px;
   top: 8px;
-  width: 44%;
+  width: 52%;
   height: 100%;
   background-color: #fff;
 }
-.sec1 ul .border-2::after {
+.home-sec ul .border-2::after {
   z-index: -1;
   content: "";
   position: absolute;
   right: 66px;
   top: 8px;
-  width: 30%;
+  width: 29%;
   height: 100%;
   background-color: #D82B2B;
 }
-.sec1 h5 {
+.home-sec h5 {
   color: #FFF;
   font-size: 24px;
   font-style: normal;
@@ -141,14 +190,14 @@ header .navbar_active {
 }
 
 @media (min-width: 450px) {
-  .sec1 {
+  .home-sec {
     padding-top: 130px;
   }
-  .sec1 ul {
+  .home-sec ul {
     padding: 0;
     margin: 0;
   }
-  .sec1 ul li {
+  .home-sec ul li {
     position: relative;
     margin: 30px 0;
     padding: 10px 69px;
@@ -156,17 +205,17 @@ header .navbar_active {
     width: 100%;
     height: 56px;
   }
-  .sec1 ul li h2 {
+  .home-sec ul li h2 {
     background: #231F20 !important;
     padding: 15px 0;
     font-size: 18px;
     text-align: center;
   }
-  .sec1 ul li h2:hover {
+  .home-sec ul li h2:hover {
     background-color: #fff !important;
     color: #231F20 !important;
   }
-  .sec1 ul .border-1::before {
+  .home-sec ul .border-1::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -176,7 +225,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 ul .border-1::after {
+  .home-sec ul .border-1::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -186,7 +235,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::before {
+  .home-sec ul .border-2::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -196,7 +245,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::after {
+  .home-sec ul .border-2::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -206,7 +255,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 h5 {
+  .home-sec h5 {
     color: #FFF;
     font-size: 24px;
     font-style: normal;
@@ -216,14 +265,14 @@ header .navbar_active {
   }
 }
 @media (min-width: 600px) {
-  .sec1 {
+  .home-sec {
     padding-top: 130px;
   }
-  .sec1 ul {
+  .home-sec ul {
     padding: 0;
     margin: 0;
   }
-  .sec1 ul li {
+  .home-sec ul li {
     position: relative;
     margin: 30px 0;
     padding: 10px 69px;
@@ -231,19 +280,19 @@ header .navbar_active {
     width: 100%;
     height: 56px;
   }
-  .sec1 ul li h2 {
+  .home-sec ul li h2 {
     background: #231F20 !important;
     padding: 15px 0;
     font-size: 18px;
     text-align: center;
   }
-  .sec1 ul li h2:hover {
+  .home-sec ul li h2:hover {
     background-color: #fff !important;
   }
-  .sec1 ul li h2:hover a {
+  .home-sec ul li h2:hover a {
     color: #231F20 !important;
   }
-  .sec1 ul .border-1::before {
+  .home-sec ul .border-1::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -253,7 +302,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 ul .border-1::after {
+  .home-sec ul .border-1::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -263,7 +312,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::before {
+  .home-sec ul .border-2::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -273,7 +322,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::after {
+  .home-sec ul .border-2::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -283,7 +332,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 h5 {
+  .home-sec h5 {
     color: #FFF;
     font-size: 24px;
     font-style: normal;
@@ -291,16 +340,70 @@ header .navbar_active {
     line-height: normal;
     margin-top: 30px;
   }
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: #231F20;
+  }
+  header .navbar {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(6.8000001907px);
+            backdrop-filter: blur(6.8000001907px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+  header .navbar ul {
+    text-align: center !important;
+    width: 74%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+  header .navbar ul li {
+    padding: 70px 0 70px 60px;
+    color: #FFF;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
+    text-align: end;
+  }
+  header .navbar svg {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    font-size: 30px;
+  }
+  header .bars {
+    width: 34px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  header .navbar_active {
+    visibility: visible;
+    opacity: 99;
+    width: 60%;
+    transition: 0.7s ease-in-out;
+  }
 }
 @media (min-width: 768px) {
-  .sec1 {
+  .home-sec {
     padding-top: 130px;
   }
-  .sec1 ul {
+  .home-sec ul {
     padding: 0;
     margin: 0;
   }
-  .sec1 ul li {
+  .home-sec ul li {
     position: relative;
     margin: 30px 0;
     padding: 10px 69px;
@@ -308,19 +411,19 @@ header .navbar_active {
     width: 100%;
     height: 56px;
   }
-  .sec1 ul li h2 {
+  .home-sec ul li h2 {
     background: #231F20 !important;
     padding: 15px 0;
     font-size: 18px;
     text-align: center;
   }
-  .sec1 ul li h2:hover {
+  .home-sec ul li h2:hover {
     background-color: #fff !important;
   }
-  .sec1 ul li h2:hover a {
+  .home-sec ul li h2:hover a {
     color: #231F20 !important;
   }
-  .sec1 ul .border-1::before {
+  .home-sec ul .border-1::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -330,7 +433,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 ul .border-1::after {
+  .home-sec ul .border-1::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -340,7 +443,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::before {
+  .home-sec ul .border-2::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -350,7 +453,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::after {
+  .home-sec ul .border-2::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -360,7 +463,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 h5 {
+  .home-sec h5 {
     color: #FFF;
     font-size: 24px;
     font-style: normal;
@@ -385,13 +488,14 @@ header .navbar_active {
     text-align: center !important;
     right: 0 !important;
     padding-top: 20px;
+    flex-direction: row !important;
   }
   .navbar ul li {
     position: relative;
     padding: 5px 8px 5px 8px !important;
     margin: 0 60px;
     color: #FFF;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 16px !important;
     font-style: normal;
     font-weight: bolder;
@@ -443,7 +547,7 @@ header .navbar_active {
     padding: 5px 8px 5px 8px !important;
     margin: 0 60px;
     color: #FFF;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 16px !important;
     font-style: normal;
     font-weight: bolder;
@@ -466,19 +570,32 @@ header .navbar_active {
     transform: scaleX(1);
     transform-origin: left;
   }
+  .navbar ul li .options {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: -20px !important;
+    background-color: rgba(43, 43, 46, 0.7058823529);
+    width: 80px !important;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    padding: 5px 0;
+    text-align: center;
+  }
   .navbar ul .nav_active::after {
     transform: scaleX(1);
     transform-origin: left;
   }
-  .sec1 {
+  .home-sec {
     padding-top: 120px;
     width: 100%;
     height: auto;
   }
-  .sec1 ul {
+  .home-sec ul {
     margin: 40px 10px;
   }
-  .sec1 ul li {
+  .home-sec ul li {
     position: relative;
     margin: 30px 0;
     padding: 10px 20px;
@@ -486,15 +603,15 @@ header .navbar_active {
     width: 100%;
     height: 67px;
   }
-  .sec1 ul li h2 {
+  .home-sec ul li h2 {
     background: #231F20 !important;
     padding: 16px 80px;
     font-size: 25px;
   }
-  .sec1 ul li h2:hover {
+  .home-sec ul li h2:hover {
     background-color: #fff;
   }
-  .sec1 ul .border-1::before {
+  .home-sec ul .border-1::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -504,7 +621,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 ul .border-1::after {
+  .home-sec ul .border-1::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -514,7 +631,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::before {
+  .home-sec ul .border-2::before {
     z-index: -1;
     content: "";
     position: absolute;
@@ -524,7 +641,7 @@ header .navbar_active {
     height: 100%;
     background-color: #fff;
   }
-  .sec1 ul .border-2::after {
+  .home-sec ul .border-2::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -534,7 +651,7 @@ header .navbar_active {
     height: 100%;
     background-color: #D82B2B;
   }
-  .sec1 h5 {
+  .home-sec h5 {
     color: #FFF;
     font-size: 24px;
     font-style: normal;
@@ -582,6 +699,26 @@ header .navbar_active {
     color: #D82B2B;
   }
 }
+.contact-section {
+  padding-top: 251px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.contact-section ul {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  font-weight: 500 !important;
+  padding: 0;
+}
+.contact-section ul li {
+  padding: 10px 20px;
+}
+.contact-section ul li:hover i {
+  color: #D82B2B;
+}
+
 .swiper {
   width: 100% !important;
   height: 100%;
@@ -613,11 +750,12 @@ header .navbar_active {
   margin-bottom: 40px;
   color: #D82B2B;
   text-align: center;
+  font-family: "Oswald", sans-serif;
 }
 .swiper .swiper-slide .blog_boxes p {
   color: #FFF;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
   padding-right: 0;
   text-align: center;
@@ -656,6 +794,11 @@ header .navbar_active {
 .slider_2 .slider-slide .slider_text h4 {
   margin-bottom: 50px;
   color: #D82B2B;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .slider_2 .slick-prev, .slider_2 .slick-next {
   display: none !important;
@@ -753,6 +896,7 @@ header .navbar_active {
     margin-bottom: 50px;
     color: #D82B2B;
     text-align: start;
+    font-family: "Oswald", sans-serif;
   }
   .swiper .swiper-slide .blog_boxes p {
     color: #FFF;
@@ -799,7 +943,7 @@ header .navbar_active {
   }
 }
 .section_order {
-  padding-top: 130px;
+  padding-top: 121px;
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -830,9 +974,11 @@ header .navbar_active {
   margin-top: 20px;
   width: 100%;
   border: 1px solid #D82B2B;
+  height: auto;
+  padding: 0 10px;
 }
 .section_order .order_boxes form .boxes_bottom .active .textarea_input {
-  margin-top: 170px !important;
+  margin-top: 270px !important;
 }
 .section_order .order_boxes form .custom-select {
   position: relative;

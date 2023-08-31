@@ -1,4 +1,4 @@
-namespace JMD.Models
+﻿namespace JMD.Models
 {
     public class ErrorViewModel
     {

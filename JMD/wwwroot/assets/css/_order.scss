@@ -1,5 +1,5 @@
 .section_order {
-     padding-top: 130px;
+     padding-top: 121px;
      width: 100%;
      height: auto;
      margin: 0 auto;
@@ -31,31 +31,21 @@
 
 
 
-               // .custom-select {
-               //      position: relative;
-               //      width: 100%;
-               //      padding-right: 10px;
-               //      cursor: pointer;
-               //      background-color: transparent;
-               // }
-
-
-
-
-
-
                .boxes_bottom .active {
                     .options {
                          display: block;
                          margin-top: 20px;
                          width: 100%;
                          border: 1px solid #D82B2B;
+                         height: auto;
+                         padding: 0 10px;
+                       
 
                     }
 
                     .textarea_input {
-                         margin-top: 170px !important;
-                         //    transition: 1s ease-in-out;
+                         margin-top: 270px !important;
+                          
                     }
 
                }
@@ -65,6 +55,12 @@
                     width: 100%;
                     cursor: pointer;
 
+
+                    // .input_value{
+                    //      opacity: 0;
+                    //      visibility: hidden;
+
+                    // }
                     .selected-option {
 
                          padding: 10px 10px 10px 10px;
@@ -87,7 +83,7 @@
                          width: 100%;
                          padding: 0;
                          height: 130px;
-
+                         
 
 
 

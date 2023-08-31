@@ -31,13 +31,14 @@
                 margin-bottom: 40px;
                 color: #D82B2B;
                 text-align: center;
+                font-family: 'Oswald', sans-serif;
             }
 
             p {
                 color: #FFF;
                 // font-size: 14px;
                 font-style: normal;
-                font-weight: 700;
+                font-weight: 500;
                 line-height: normal;
                 padding-right: 0;
                 text-align: center;
@@ -86,6 +87,11 @@
                 h4 {
                     margin-bottom: 50px;
                     color: #D82B2B;
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
                 }
             }
         }
@@ -215,6 +221,7 @@
                     margin-bottom: 50px;
                     color: #D82B2B;
                     text-align: start;
+                    font-family: 'Oswald', sans-serif;
                 }
 
                 p {

@@ -1,0 +1,91 @@
+﻿@model OrderDTO
+<div class="section_order">
+    <div class="order_boxes">
+        <form id="orderForm" method="post" action="/Home/Order">
+          
+            <label for="Name">Name</label>
+            <input type="text" name="Name" id="Name" required>
+
+            <label for="Email">E-mail</label>
+            <input type="email" name="Email" id="Email" required>
+
+            <label for="Telephone">Telephone</label>
+            <input type="number" name="Telephone" id="Telephone" required>
+
+            <label for="OrderType">Order type</label>
+            <div class="boxes_bottom">
+                <div class="custom-select">
+                    <div class="selected-option">Select</div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <div class="options">
+                        @foreach (var orderType in @ViewBag.OrderTypeList)
+                        {
+                            <div class="option" data-value="@orderType.Id"><a href="#">@orderType.OrderName</a></div>
+                        }
+                    </div>
+                    <input type="hidden" name="OrderTypeId" id="HiddenOrderTypeId">
+                    <input type="text" class="input_value d-none" name="OrderName" id="OrderName">
+
+                    <div class="textarea_input">
+                        <label for="Message">Message</label>
+                        <textarea name="Message" id="Message" class="textarea"></textarea>
+                        <button type="button" id="orderButton">Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error message for empty fields -->
+            <div id="errorMessage" class="error-message" style="color: red;"></div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".option").click(function () {
+                var orderTypeId = $(this).data("value");
+                $("#HiddenOrderTypeId").val(orderTypeId);
+                $(".selected-option").text($(this).text());
+            });
+
+            $("#orderButton").click(function (e) {
+                e.preventDefault();
+
+                // Check if any of the input fields are empty
+                if (
+                    $("#Name").val() === "" ||
+                    $("#Email").val() === "" ||
+                    $("#Telephone").val() === "" ||
+                    $("#HiddenOrderTypeId").val() === ""||
+                    $("#Message").val() === ""
+
+
+                ) {
+                    $("#errorMessage").text("Please fill in all fields.");
+                } else {
+                    // All fields are filled, so clear any previous error message
+                    $("#errorMessage").empty();
+
+                    var formData = new FormData($("#orderForm")[0]);
+
+                    // Send an AJAX POST request to the controller
+                    $.ajax({
+                        url: "/Home/Order",
+                        type: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            window.location.href = '/Home/Index';
+                        },
+                        error: function (error) {
+                            console.error("Error placing the order:", error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

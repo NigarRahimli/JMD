@@ -1,0 +1,54 @@
+﻿@model List<OrderDashboardVM>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th>Order Type</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th>Order Type</th>
+                        <th>Message</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.Name</td>
+                            <td>@order.Email</td>
+                            <td>@order.Telephone</td>
+                            <td>@order.OrderTypeName</td>
+                            <td>@order.Message</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Table{
+
+<!-- Page level plugins -->
+<script src="~/admin_assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/admin_assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+    <script src="~/admin_assets/js/demo/datatables-demo.js"></script>
+
+}
