@@ -7497,6 +7497,38 @@
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\199537a0-4208-4afd-b107-f6f817c2ff40.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\199537a0-4208-4afd-b107-f6f817c2ff40.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\613cb5ac-c291-4ac8-af5a-103e2d221ad6.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\613cb5ac-c291-4ac8-af5a-103e2d221ad6.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\8b307c41-e735-498c-b79b-35810ee0ac43.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\8b307c41-e735-498c-b79b-35810ee0ac43.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\b64cd256-8fe0-4e89-a954-d42db8a5ec27.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\b64cd256-8fe0-4e89-a954-d42db8a5ec27.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\b8db90b3-0090-47f0-a12d-6cb2e1fc4380.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\b8db90b3-0090-47f0-a12d-6cb2e1fc4380.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\ca92f529-ec11-4b42-a21a-9fb9d224d9c7.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\ca92f529-ec11-4b42-a21a-9fb9d224d9c7.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\db88d801-3a32-4e64-a98b-2b22a604a32d.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\db88d801-3a32-4e64-a98b-2b22a604a32d.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\eb87faf9-bab1-48a1-8222-c9f7b1c7b137.jfif",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\eb87faf9-bab1-48a1-8222-c9f7b1c7b137.jfif"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.JMD.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

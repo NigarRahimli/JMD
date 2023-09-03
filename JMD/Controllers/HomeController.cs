@@ -3,7 +3,6 @@ using JMD.Data;
 using JMD.DTOs;
 using JMD.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace JMD.Controllers
 {
@@ -56,22 +55,15 @@ namespace JMD.Controllers
 
                     _context.Orders.Add(order);
                     _context.SaveChanges();
-
-                    // Başarılı bir sipariş durumunda ana sayfaya yönlendir
                     return RedirectToAction("Index");
                 }
 
-                // Geçersiz model durumunda sipariş formunu tekrar görüntüle
-                ViewBag.OrderTypeList = _context.OrderTypes.ToList();
+            
                 return View(orderDto);
             }
             catch (Exception ex)
             {
-                // Log the exception
-                Console.WriteLine(ex.Message);
-
-                // Hata durumunda sipariş formunu tekrar görüntüle
-                ViewBag.OrderTypeList = _context.OrderTypes.ToList();
+             
                 return View(orderDto);
             }
         }
