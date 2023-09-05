@@ -1,6 +1,7 @@
 ﻿// HomeController.cs
 using JMD.Data;
 using JMD.DTOs;
+using JMD.Helpers.Enums;
 using JMD.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,7 @@ namespace JMD.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -50,8 +52,12 @@ namespace JMD.Controllers
                         Email = orderDto.Email,
                         Telephone = orderDto.Telephone,
                         OrderTypeId = orderDto.OrderTypeId,
-                        Message = orderDto.Message
-                    };
+                        Message = orderDto.Message,
+                        Stage=(int)Stage.isNew,
+
+
+                        StageName= Enum.GetName(typeof(Stage), Stage.isNew)
+                };
 
                     _context.Orders.Add(order);
                     _context.SaveChanges();
@@ -67,6 +73,7 @@ namespace JMD.Controllers
                 return View(orderDto);
             }
         }
+
 
     }
 }

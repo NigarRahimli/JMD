@@ -1,5 +1,88 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<BlogLanguage>
+
+
+<a href="/dashboard/blog/create" class="btn btn-success">Create new blog</a><br />
+<br />
+
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>PhotoUrl</th>
+                        <th>Title</th>
+                        <th>Short Description</th>
+                        <th>Language</th>
+                        <th>Deleted</th>
+                        <th>Favourite</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>PhotoUrl</th>
+                        <th>Title</th>
+                        <th>Short Description</th>
+                        <th>Language</th>
+                        <th>Deleted</th>
+                        <th>Favourite</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var blogLang in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@blogLang.Blog.PhotoUrl" width="150" height="150" />
+                            </td>
+                            <td>@blogLang.Name</td>
+                            <td>
+                                @blogLang.ShortDesc
+                            </td>
+                            <td>
+                                @blogLang.LanguageCode
+                            </td>
+                            <td>
+                                @blogLang.Blog.IsDeleted
+                            </td>
+                            <td>
+                                @blogLang.Blog.IsFavorite
+                            </td>
+                            <td>
+                                <a class="btn btn-success" href="/dashboard/blog/edit/@blogLang.BlogId">Edit</a>
+                                <a class="btn btn-primary" href="/dashboard/blog/detail/@blogLang.Id">Detail</a>
+                                <form method="post" asp-action="Delete" asp-controller="Blog">
+                                    <input type="hidden" name="id" value="@blogLang.BlogId" />
+                                    <br/>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                            
+                            
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Table{
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <!-- Page level plugins -->
+    <script src="~/admin_assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/admin_assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/admin_assets/js/demo/datatables-demo.js"></script>
+
 }

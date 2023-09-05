@@ -9,6 +9,8 @@
         public int OrderTypeId { get; set; }
         public OrderType OrderType { get; set; }
         public string Message { get; set; }
+        public int Stage { get; set; }
+        public string StageName { get; set; }
 
     }
 }

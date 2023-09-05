@@ -1,0 +1,190 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model BlogUpdateDTO
+
+<div class="alert alert-danger">
+    @ViewBag.ErrorMessage
+</div>
+<form method="post" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mt-3">
+                        <input type="file" id="productPicture" name="Photourl" />
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group mt-3">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        @{
+                                            var firstLanguage = Model.BlogLanguages.ElementAtOrDefault(0);
+                                        }
+                                        @if (firstLanguage != null)
+                                        {
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                                    aria-selected="true">
+                                                    
+                                                    @(firstLanguage.LangCode == "az-AZ" ? "Az" : "En")
+
+                                            </button>
+                                        </li >}
+                                        @{
+                                            var secondLanguage = Model.BlogLanguages.ElementAtOrDefault(1);
+                                        }
+                                        @if (secondLanguage != null)
+                                        {
+
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#profile" type="button" role="tab"
+                                                    aria-controls="profile" aria-selected="false">
+                                                    @((secondLanguage.LangCode == "en-US") ? "En" : "Az")
+                                            </button>
+                                        </li>}
+                                    </ul>
+                                    
+                                        <div class="tab-content" id="myTabContent">
+                                            @if (firstLanguage != null)
+                                        {
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                            aria-labelledby="home-tab">
+                                                <div class="form-group mt-3">
+                                                    <input asp-for="BlogLanguages[0].Title" type="text"
+                                                    class="form-control form-control-user"
+                                                           placeholder="Write @(firstLanguage.LangCode == "az-AZ" ? "Azerbaijan" : "English") name">
+                                                </div>
+                                                <div class="form-group  mt-3">
+                                                    <textarea asp-for="BlogLanguages[0].ShortDesc" type="text"
+                                                    maxlength="150"
+                                                    class="form-control"
+                                                              placeholder="Write @(firstLanguage.LangCode == "az-AZ" ? "Azerbaijan" : "English") short description "
+                                                    rows="3"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea asp-for="BlogLanguages[0].Description" id="Description0"
+                                                    name="BlogLanguages[0].Description"
+                                                    class="form-control" rows="30"></textarea>
+                                                </div>
+                                            </div>
+                                        }
+                                        @if (secondLanguage != null)
+                                            {
+                                                <div class="tab-pane fade" id="profile" role="tabpanel"
+                                                aria-labelledby="profile-tab">
+                                                <div class="form-group  mt-3">
+
+
+                                                    <input asp-for="BlogLanguages[1].Title" type="text"
+                                                    class="form-control form-control-user"
+                                                           placeholder="Write @(secondLanguage.LangCode == "en-US" ? "English": "Azerbaijan") name">
+
+                                                </div>
+                                                <div class="form-group  mt-3">
+                                                   
+                                                        <textarea asp-for="BlogLanguages[1].ShortDesc" type="text"
+                                                        maxlength="150"
+                                                        class="form-control"
+                                                              placeholder="Write @(secondLanguage.LangCode == "en-US" ? "English": "Azerbaijan") description "
+                                                        rows="3"></textarea>
+                                                    
+                                                </div>
+                                                <div class="form-group">
+                                                    
+                                                    
+                                                        <textarea asp-for="BlogLanguages[1].Description" id="Description1"
+                                                        name="BlogLanguages[1].Description"
+                                                        class="form-control" rows="30"></textarea>
+                                                    
+                                                </div>
+                                          
+                                        </div>
+                                        }
+                                        <div class="form-group m-aouto">
+                                            <label for="IsDeleted">Deleted</label>
+                                            <input asp-for="IsDeleted" class="" id="IsDeleted" placeholder="IsDeleted">
+                                        </div>
+                                        <br>
+                                        <div class="form-group m-aouto">
+                                            <label for="IsFavourite">IsFavourite</label>
+                                            <input asp-for="IsFavourite" type="checkbox" id="IsFavourite" placeholder="IsFavourite">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-success" value="Update">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const productPicture = document.getElementById("productPicture");
+        const listPictures = document.getElementById("listPictures");
+
+        productPicture.addEventListener("change", function () {
+            var datas = new FormData();
+
+            for (let i = 0; i < productPicture.files.length; i++) {
+                datas.append("photoUrl", productPicture.files[i]);
+            }
+
+            $.ajax({
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                url: "/picture/uploadpicture",
+                data: datas,
+                success: function (e) {
+                    CreatePhoto(e);
+                }
+            });
+        });
+
+        function CreatePhoto(photoUrl) {
+            const carouselInner = listPictures.querySelector('.carousel-inner');
+            if (!carouselInner) return;
+
+            carouselInner.innerHTML = '';
+
+            for (let a = 0; a < photoUrl.length; a++) {
+                const activeClass = a === 0 ? "active" : "";
+                const carouselItem = `
+                                    <div class="carousel-item ${activeClass}">
+                                        <img src="${photoUrl[a]}" class="d-block w-100" alt="Product Image">
+                                        <input type="hidden"  name="Photo" value="${photoUrl[a]}" />
+                                    </div>
+                                `;
+                carouselInner.innerHTML += carouselItem;
+            }
+
+            $('.carousel').carousel();
+        }
+    });
+</script>
+
+@section CKE{
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+    <script>
+        var areas = Array('BlogLanguages[0].Description', 'BlogLanguages[1].Description');
+        $.each(areas, function (i, area) {
+            CKEDITOR.replace(area, {
+                customConfig: '/Scripts/ckeditor/config.mini.js'
+            });
+        });
+    </script>
+}

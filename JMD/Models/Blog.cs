@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string PhotoUrl { get; set; }
-        public DateTime UpdatedDate { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public bool IsFavorite { get; set; }
+        public bool IsDeleted { get; set; }
         public List<BlogLanguage> BlogLangs { get; set;}
         
     }

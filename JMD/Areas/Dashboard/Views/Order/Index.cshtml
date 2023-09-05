@@ -14,17 +14,10 @@
                         <th>Telephone</th>
                         <th>Order Type</th>
                         <th>Message</th>
+                        <th>OrderStage</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Telephone</th>
-                        <th>Order Type</th>
-                        <th>Message</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach (var order in Model)
                     {
@@ -34,6 +27,21 @@
                             <td>@order.Telephone</td>
                             <td>@order.OrderTypeName</td>
                             <td>@order.Message</td>
+                            <td>@order.StageName</td>
+
+                            <td>
+                                <div class="btn-group">
+                                    
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Change Stage 
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <button class="dropdown-item change-stage-button" data-orderid="@order.OrderId" data-stage="isNew">New</button>
+                                        <button class="dropdown-item change-stage-button" data-orderid="@order.OrderId" data-stage="isProcessing">Processing</button>
+                                        <button class="dropdown-item change-stage-button" data-orderid="@order.OrderId" data-stage="isCompleted">Completed</button>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -43,12 +51,52 @@
 </div>
 
 @section Table{
+    <!-- Page level plugins -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level plugins -->
-<script src="~/admin_assets/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/admin_assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-    <script src="~/admin_assets/js/demo/datatables-demo.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize the DataTable
+            $('#dataTable').DataTable();
 
+            // Handle stage change button clicks
+            $('.change-stage-button').on('click', function () {
+                var orderId = $(this).data('orderid');
+                var newStage = $(this).data('stage');
+                changeOrderStage(orderId, newStage);
+            });
+
+            // Function to make AJAX request to change order stage
+            function changeOrderStage(orderId, newStage) {
+                $.ajax({
+                    url: '/Dashboard/Order/ChangeStage', // Update the URL if needed
+                    method: 'POST',
+                    data: {
+                        orderId: orderId,
+                        newStage: newStage
+                    },
+                    success: function (result) {
+                        // Handle success (e.g., update the UI)
+                        console.log('Order stage changed successfully.');
+                        
+                        // Find the <td> element containing the stage name for this order
+                        var $orderStage = $('.change-stage-button[data-orderid="' + orderId + '"]').closest('tr').find('.order-stage');
+
+                        // Update the stage name in the UI
+                        $orderStage.text(newStage); // Set the text based on the new stage value
+                    },
+                    error: function (error) {
+                        // Handle error
+                        console.error('Error changing order stage:', error.responseText);
+                        // Display an error message or take appropriate action
+                    }
+                });
+            }
+        });
+    </script>
 }
+

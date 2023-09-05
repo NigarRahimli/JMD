@@ -1,0 +1,13 @@
+﻿@model User
+<form method="post" class="mt-3">
+    <input name="userId" type="hidden" value="@Model.Id" />
+
+    <div class="form-group">
+        <label for="Name">Select Role:</label>
+        <select name="Name" class="form-control" id="Name" asp-items="@ViewBag.Roles">
+            <option value="">Select a Role</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Role</button>
+</form>

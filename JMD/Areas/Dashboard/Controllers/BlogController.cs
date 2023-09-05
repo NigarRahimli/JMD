@@ -8,6 +8,7 @@ using JMD.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace JMD.Areas.Dashboard.Controllers
 {
@@ -25,74 +26,215 @@ namespace JMD.Areas.Dashboard.Controllers
 
         public IActionResult Index()
         {
-            return View();
+         
+            var blogs = _appDbContext.BlogLanguages.Include(x=>x.Blog).ToList();
+            return View(blogs); 
         }
 
         public IActionResult Create()
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult Create(BlogCreateDTO blogCreateDTO, IFormFile Photourl)
         {
+        try
+        {
+        if (Photourl != null && Photourl.Length > 0)
+        {
+            var fileName = Guid.NewGuid() + Path.GetExtension(Photourl.FileName);
+            var path = Path.Combine(_env.WebRootPath, "uploads", "Blog", fileName);
+
+            using (var fileStream = new FileStream(path, FileMode.Create))
+            {
+                Photourl.CopyTo(fileStream);
+            }
+
+            blogCreateDTO.PhotoUrl = "/uploads/Blog/" + fileName;
+        }
+
+        var blog = new Blog
+        {
+            PhotoUrl = blogCreateDTO.PhotoUrl,
+            IsDeleted = false,
+
+            BlogLangs = new List<BlogLanguage>()
+        };
+
+        _appDbContext.Blogs.Add(blog);
+        _appDbContext.SaveChanges();
+
+        var blogId = blog.Id;
+
+        if (!string.IsNullOrEmpty(blogCreateDTO.BlogLanguages[0].Title))
+        {
+            var azLanguageDTO = blogCreateDTO.BlogLanguages[0];
+            var azBlogLanguage = new BlogLanguage
+            {
+                LanguageCode = "az-AZ", 
+                Name = azLanguageDTO.Title,
+                ShortDesc = azLanguageDTO.ShortDesc,
+                Description = azLanguageDTO.Description,
+                SeoUrl = CreateSeo.CreateSeoUrl(azLanguageDTO.Title, "az-AZ"),
+                BlogId = blogId,
+                
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+            };
+
+            _appDbContext.BlogLanguages.Add(azBlogLanguage);
+        }
+
+        if (!string.IsNullOrEmpty(blogCreateDTO.BlogLanguages[1].Title))
+        {
+            var enLanguageDTO = blogCreateDTO.BlogLanguages[1];
+            var enBlogLanguage = new BlogLanguage
+            {
+                LanguageCode = "en-US", 
+                Name = enLanguageDTO.Title,
+                ShortDesc = enLanguageDTO.ShortDesc,
+                Description = enLanguageDTO.Description,
+                SeoUrl = CreateSeo.CreateSeoUrl(enLanguageDTO.Title, "en-US"),
+                BlogId = blogId,
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now
+            };
+
+            _appDbContext.BlogLanguages.Add(enBlogLanguage);
+        }
+
+        _appDbContext.SaveChanges();
+
+       
+        return RedirectToAction("Index"); 
+    }
+    catch (Exception ex)
+    {
+        return View(blogCreateDTO);
+    }
+}
+        public IActionResult Edit(int id)
+        {
             try
             {
+                var blog = _appDbContext.Blogs.Include(x => x.BlogLangs).FirstOrDefault(x => x.Id == id);
+
+                if (blog == null)
+                {
+                    // Handle the case where the blog post with the given id was not found.
+                    return NotFound();
+                }
+
+                // Create a BlogUpdateDTO model and populate it with data from the blog
+                var blogUpdateDTO = new BlogUpdateDTO
+                {
+                    IsDeleted = blog.IsDeleted,
+                    IsFavourite = blog.IsFavorite,
+                    BlogLanguages = blog.BlogLangs.Select(bl => new BlogLangUpdateDTO
+                    {
+                        Title = bl.Name,
+                        ShortDesc = bl.ShortDesc,
+                        Description = bl.Description,
+                        LangCode=bl.LanguageCode
+                        
+                    }).ToList()
+                };
+
+                return View(blogUpdateDTO);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception if needed
+                return RedirectToAction("Index"); // Redirect to the index page or an error page
+            }
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(int id, BlogUpdateDTO blogUpdateDTO, IFormFile Photourl)
+        {
+            try
+            {
+                var blog = _appDbContext.Blogs.Include(x => x.BlogLangs).FirstOrDefault(x => x.Id == id);
+
+                if (blog == null)
+                {
+                    // Handle the case where the blog post with the given id was not found.
+                    return NotFound();
+                }
+
+                // Update properties of the blog post
+                blog.IsDeleted = blogUpdateDTO.IsDeleted;
+                blog.IsFavorite = blogUpdateDTO.IsFavourite;
+
                 if (Photourl != null && Photourl.Length > 0)
                 {
+                    // Handle updating the photo URL if a new file is uploaded.
                     var fileName = Guid.NewGuid() + Path.GetExtension(Photourl.FileName);
                     var path = Path.Combine(_env.WebRootPath, "uploads", "Blog", fileName);
 
                     using (var fileStream = new FileStream(path, FileMode.Create))
                     {
                         Photourl.CopyTo(fileStream);
+
+                        // Delete the old photo file, if it exists
+                        if (!string.IsNullOrEmpty(blog.PhotoUrl))
+                        {
+                            var oldFilePath = Path.Combine(_env.WebRootPath, blog.PhotoUrl.TrimStart('/'));
+                            if (System.IO.File.Exists(oldFilePath))
+                            {
+                                System.IO.File.Delete(oldFilePath);
+                            }
+                        }
+
+                        blog.PhotoUrl = "/uploads/Blog/" + fileName;
                     }
-
-                    blogCreateDTO.PhotoUrl = "/uploads/Blog/" + fileName;
                 }
 
-                var blog = new Blog
+                // Update properties of BlogLanguages based on blogUpdateDTO
+                for (int i = 0; i < blog.BlogLangs.Count; i++)
                 {
-                    PhotoUrl = blogCreateDTO.PhotoUrl,
-                    CreatedDate = DateTime.Now,
-                    UpdatedDate = DateTime.Now,
-                    BlogLangs = new List<BlogLanguage>()
-                };
-
-                _appDbContext.Blogs.Add(blog);
-                _appDbContext.SaveChanges();
-
-                var blogId = blog.Id;
-
-                var blogLanguages = new List<BlogLanguage>();
-                var langCodes = new[] { "az-AZ", "en-US" };
-                for (int i = 0; i < langCodes.Length; i++)
-                {
-                    var langCode = langCodes[i];
-                    var languageDTO = blogCreateDTO.BlogLanguages[i];
-                    var blogLanguage = new BlogLanguage
-                    {
-                        LanguageCode = langCode,
-                        Name = languageDTO.Title,
-                        ShortDesc = languageDTO.ShortDesc,
-                        Description = languageDTO.Description,
-                        SeoUrl = CreateSeo.CreateSeoUrl(languageDTO.Title, langCode),
-                        BlogId = blogId,
-                        IsFeatured=true
-
-                    };
-                    blogLanguages.Add(blogLanguage);
+                    blog.BlogLangs[i].ShortDesc = blogUpdateDTO.BlogLanguages[i].ShortDesc;
+                    blog.BlogLangs[i].Description = blogUpdateDTO.BlogLanguages[i].Description;
+                    blog.BlogLangs[i].Name = blogUpdateDTO.BlogLanguages[i].Title;
+                    blog.BlogLangs[i].UpdatedDate = DateTime.Now;
+                    blog.BlogLangs[i].SeoUrl = CreateSeo.CreateSeoUrl(blogUpdateDTO.BlogLanguages[i].Title, "az-AZ");
                 }
 
-                _appDbContext.BlogLanguages.AddRange(blogLanguages);
                 _appDbContext.SaveChanges();
 
-                return View("Index");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
-                return View(blogCreateDTO);
+                // Here, you should pass the correct model to the view (blogUpdateDTO).
+                return View(blogUpdateDTO);
             }
         }
+
+
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var blog = _appDbContext.Blogs.Include(b => b.BlogLangs).FirstOrDefault(b => b.Id == id);
+
+                if (blog != null)
+                {
+                    blog.IsDeleted= true;
+                    _appDbContext.SaveChanges();
+                }
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }
+        }
+
+
     }
 }
