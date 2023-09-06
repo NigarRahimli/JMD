@@ -46,9 +46,9 @@
                                             </div>
                                             <div class="form-group  mt-3">
                                                 <textarea asp-for="BlogLanguages[0].ShortDesc" type="text"
-                                                          maxlength="150"
+                                                          maxlength="300"
                                                           class="form-control"
-                                                          placeholder="Write English description "
+                                                          placeholder="Write Azerbaijan description "
                                                           rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="form-group  mt-3">
                                                 <textarea asp-for="BlogLanguages[1].ShortDesc" type="text"
-                                                          maxlength="150"
+                                                          maxlength="300"
                                                           class="form-control"
                                                           placeholder="Write English description "
                                                           rows="3"></textarea>
@@ -76,6 +76,11 @@
                                                           name="BlogLanguages[1].Description"
                                                           class="form-control" rows="30"></textarea>
                                             </div>
+
+                                        </div>
+                                        <div class="form-group m-aouto">
+                                            <label for="IsFavourite">IsFavourite</label>
+                                            <input asp-for="IsFavourite" type="checkbox" id="IsFavourite" placeholder="IsFavourite">
                                         </div>
                                     </div>
                                 </div>

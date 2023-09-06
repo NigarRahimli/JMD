@@ -56,6 +56,7 @@ namespace JMD.Areas.Dashboard.Controllers
         var blog = new Blog
         {
             PhotoUrl = blogCreateDTO.PhotoUrl,
+            IsFavorite=blogCreateDTO.IsFavourite,
             IsDeleted = false,
 
             BlogLangs = new List<BlogLanguage>()
@@ -121,11 +122,9 @@ namespace JMD.Areas.Dashboard.Controllers
 
                 if (blog == null)
                 {
-                    // Handle the case where the blog post with the given id was not found.
                     return NotFound();
                 }
 
-                // Create a BlogUpdateDTO model and populate it with data from the blog
                 var blogUpdateDTO = new BlogUpdateDTO
                 {
                     IsDeleted = blog.IsDeleted,
@@ -144,8 +143,7 @@ namespace JMD.Areas.Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                // Handle the exception if needed
-                return RedirectToAction("Index"); // Redirect to the index page or an error page
+                return RedirectToAction("Index");
             }
         }
 
@@ -159,17 +157,14 @@ namespace JMD.Areas.Dashboard.Controllers
 
                 if (blog == null)
                 {
-                    // Handle the case where the blog post with the given id was not found.
                     return NotFound();
                 }
 
-                // Update properties of the blog post
                 blog.IsDeleted = blogUpdateDTO.IsDeleted;
                 blog.IsFavorite = blogUpdateDTO.IsFavourite;
 
                 if (Photourl != null && Photourl.Length > 0)
                 {
-                    // Handle updating the photo URL if a new file is uploaded.
                     var fileName = Guid.NewGuid() + Path.GetExtension(Photourl.FileName);
                     var path = Path.Combine(_env.WebRootPath, "uploads", "Blog", fileName);
 
@@ -177,7 +172,6 @@ namespace JMD.Areas.Dashboard.Controllers
                     {
                         Photourl.CopyTo(fileStream);
 
-                        // Delete the old photo file, if it exists
                         if (!string.IsNullOrEmpty(blog.PhotoUrl))
                         {
                             var oldFilePath = Path.Combine(_env.WebRootPath, blog.PhotoUrl.TrimStart('/'));
@@ -191,7 +185,6 @@ namespace JMD.Areas.Dashboard.Controllers
                     }
                 }
 
-                // Update properties of BlogLanguages based on blogUpdateDTO
                 for (int i = 0; i < blog.BlogLangs.Count; i++)
                 {
                     blog.BlogLangs[i].ShortDesc = blogUpdateDTO.BlogLanguages[i].ShortDesc;
@@ -207,7 +200,6 @@ namespace JMD.Areas.Dashboard.Controllers
             }
             catch (Exception ex)
             {
-                // Here, you should pass the correct model to the view (blogUpdateDTO).
                 return View(blogUpdateDTO);
             }
         }
