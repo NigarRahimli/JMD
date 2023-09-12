@@ -16,9 +16,9 @@
             <label for="OrderType">@language.Getkey("Order tipi")</label>
             <div class="boxes_bottom">
                 <div class="custom-select">
-                    <div class="selected-option">@language.Getkey("Seçin")</div>
+                    <div class="selected-option orders">@language.Getkey("Seçin")</div>
                     <i class="fa-solid fa-chevron-down"></i>
-                    <div class="optiones">
+                    <div class="options">
                         @foreach (var orderType in @ViewBag.OrderTypeList)
                         {
                             <div class="option" data-value="@orderType.Id"><a href="#">@orderType.OrderName</a></div>
@@ -40,7 +40,7 @@
         </form>
         <div class="order_overlay">
             <div class="overlay_text d-flex align-items-center h-100 justify-content-center">
-                <p>Sifarişiniz qeydə alındı! </p>
+                <p>@language.Getkey("Sifarişiniz qeydə alındı!")</p>
                 <svg xmlns="http://www.w3.org/2000/svg" class="svg_1" width="12" height="9" viewBox="0 0 12 9" fill="none">
                     <path d="M3.52492 6.92579L1.15999 4.56086C1.03256 4.43343 0.859723 4.36184 0.679506 4.36184C0.49929 4.36184 0.326455 4.43343 0.199023 4.56086C0.0715906 4.68829 0 4.86113 0 5.04134C0 5.13058 0.0175761 5.21894 0.0517245 5.30138C0.0858729 5.38382 0.135925 5.45873 0.199023 5.52183L3.04785 8.37065C3.31365 8.63645 3.74302 8.63645 4.00882 8.37065L11.2195 1.15999C11.3469 1.03256 11.4185 0.859723 11.4185 0.679506C11.4185 0.49929 11.3469 0.326455 11.2195 0.199023C11.092 0.0715908 10.9192 0 10.739 0C10.5588 0 10.3859 0.0715908 10.2585 0.199023L3.52492 6.92579Z" fill="#78FD62" />
                 </svg>
@@ -65,7 +65,7 @@
                 var orderTypeId = $(this).data("value");
                 $("#HiddenOrderTypeId").val(orderTypeId);
                 $("#OrderName").val($(this).text()); // Store the selected order name
-                $(".selected-option").text($(this).text());
+                $(".orders").text($(this).text());
             });
 
             $("#orderButton").click(function (e) {
@@ -96,7 +96,6 @@
                         success: function (response) {
                             // Hide the form and show the success message overlay
                             //$("#orderForm").hide();
-                            $(".order_overlay p").text("Sifarişiniz qeydə alındı!");
                             $(".order_overlay").addClass("order_overlay_active");
                             //window.setTimeout(function () {
                             //    $(".order_overlay").removeClass("order_overlay_active");

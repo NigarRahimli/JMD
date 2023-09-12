@@ -972,7 +972,7 @@ header .navbar_active {
   font-weight: 300;
   line-height: normal;
 }
-.section_order .order_boxes form .boxes_bottom .active .optiones {
+.section_order .order_boxes form .boxes_bottom .active .options {
   display: block;
   margin-top: 20px;
   width: 100%;
@@ -999,7 +999,7 @@ header .navbar_active {
   color: #D82B2B;
   font-size: 20px;
 }
-.section_order .order_boxes form .custom-select .optiones {
+.section_order .order_boxes form .custom-select .options {
   display: none;
   position: absolute;
   background-color: transparent;
@@ -1007,12 +1007,12 @@ header .navbar_active {
   padding: 0;
   height: 130px;
 }
-.section_order .order_boxes form .custom-select .optiones .option {
+.section_order .order_boxes form .custom-select .options .option {
   height: 20%;
   margin: 10px 15px;
   color: #fff;
 }
-.section_order .order_boxes form .custom-select .custom-selec.active .optiones {
+.section_order .order_boxes form .custom-select .custom-selec.active .options {
   display: block;
 }
 .section_order .order_boxes form .textarea_input {

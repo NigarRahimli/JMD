@@ -45,8 +45,8 @@
                             <div class="custom-select">
                                 <div class="selected-option"> @language.Getkey("AZ")</div>
                                 <div class="options">
-                                    <div class="option"><a asp-controller="Language" asp-action="Change" asp-route-culture="az-AZ"> AZ</a></div>
-                                    <div class="option"><a asp-controller="Language" asp-action="Change" asp-route-culture="en-US"> EN</a></div>
+                                    <div class="option language-option"><a asp-controller="Language" asp-action="Change" asp-route-culture="az-AZ"> AZ</a></div>
+                                    <div class="option language-option"><a asp-controller="Language" asp-action="Change" asp-route-culture="en-US"> EN</a></div>
 
                                 </div>
                             </div>
@@ -65,9 +65,18 @@
     </header>
 
     @RenderBody()
+    <script>
+        $(document).ready(function () {
+            $(".language-option").click(function () {
+                var selectedLanguage = $(this).text().trim();
+                $("#selectedLanguage").text(selectedLanguage);
+            });
+        });
+    </script>
     <script src="~/assets/js/main.js"></script>
     @RenderSection("Swiper",false)
     @RenderSection("Scripts", false)
+    
 </body>
 
 </html>

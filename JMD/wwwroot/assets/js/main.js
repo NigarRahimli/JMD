@@ -56,16 +56,16 @@ document.addEventListener("click", function(event) {
 
 
 // order start
-const form_botton=document.querySelector(".section_order .order_boxes .form_botton")
-const order_overlay=document.querySelector(".section_order .order_boxes .order_overlay")
-const overlay_remove=document.querySelector(".section_order .order_boxes .order_overlay .overlay_remove")
+//const form_botton=document.querySelector(".section_order .order_boxes .form_botton")
+//const order_overlay=document.querySelector(".section_order .order_boxes .order_overlay")
+//const overlay_remove=document.querySelector(".section_order .order_boxes .order_overlay .overlay_remove")
 
 
-form_botton.addEventListener("click",()=>{
-  order_overlay.classList.add("order_overlay_active")
-})
+//form_botton.addEventListener("click",()=>{
+//  order_overlay.classList.add("order_overlay_active")
+//})
 
-overlay_remove.addEventListener("click",()=>{
-  order_overlay.classList.remove("order_overlay_active")
-})
+//overlay_remove.addEventListener("click",()=>{
+//  order_overlay.classList.remove("order_overlay_active")
+//})
 // order end

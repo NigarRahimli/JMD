@@ -162,6 +162,9 @@
   <data name="Sifariş et" xml:space="preserve">
     <value>Order</value>
   </data>
+  <data name="Sifarişiniz qeydə alındı!" xml:space="preserve">
+    <value>Your order has been received!</value>
+  </data>
   <data name="sənətimlə məni kəşf et" xml:space="preserve">
     <value>discover me with my art</value>
   </data>
