@@ -4,6 +4,7 @@
     {
         isNew,
         isProcessing,
-        isCompleted
+        isCompleted,
+        isInappropriate
     }
 }

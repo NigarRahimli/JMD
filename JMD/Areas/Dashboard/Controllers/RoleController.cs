@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace JMD.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Dashboard")]
     public class RoleController : Controller
     {

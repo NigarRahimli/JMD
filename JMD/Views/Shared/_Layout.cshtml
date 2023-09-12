@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject LanguageService language
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,15 +38,16 @@
                         <path d="M1 1L19 19M1 19L19 1" stroke="white" />
                     </svg>
                     <ul>
-                        <li><a href="/home/about">Haqqımda</a></li>
-                        <li><a href="/home/contact">Əlaqə</a></li>
-                        <li><a href="/home/order">Sifariş</a></li>
+                        <li><a href="/home/about">@language.Getkey("Haqqımda")</a></li>
+                        <li><a href="/home/contact">@language.Getkey("Əlaqə")</a></li>
+                        <li><a href="/home/order">@language.Getkey("Sifariş")</a></li>
                         <li>
                             <div class="custom-select">
-                                <div class="selected-option">AZ</div>
+                                <div class="selected-option"> @language.Getkey("AZ")</div>
                                 <div class="options">
-                                    <div class="option"><a href="#">AZ</a></div>
-                                    <div class="option"><a href="#">EN</a></div>
+                                    <div class="option"><a asp-controller="Language" asp-action="Change" asp-route-culture="az-AZ"> AZ</a></div>
+                                    <div class="option"><a asp-controller="Language" asp-action="Change" asp-route-culture="en-US"> EN</a></div>
+
                                 </div>
                             </div>
                         </li>

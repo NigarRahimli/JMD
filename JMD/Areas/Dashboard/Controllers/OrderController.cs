@@ -3,12 +3,15 @@ using JMD.DTOs;
 using JMD.Helpers.Enums;
 using JMD.Models;
 using JMD.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
+using System.Data;
 
 namespace JMD.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Dashboard")]
     public class OrderController : Controller
     {
@@ -42,49 +45,70 @@ namespace JMD.Areas.Dashboard.Controllers
 
             return orderDashboardVMs;
         }
-        [HttpPost]
+     
 
-        public IActionResult ChangeStage(int orderId, string newStage)
+        [HttpPost]
+        public IActionResult ChangeStage(int orderId, Stage newStage)
         {
-            // Fetch the order from the database based on orderId
             var order = _context.Orders.FirstOrDefault(o => o.Id == orderId);
             if (order == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
 
-         
-            if (Enum.TryParse<Stage>(newStage, ignoreCase: true, out var parsedStage))
-            {
-               
-                order.Stage = (int)parsedStage;
-                order.StageName= Enum.GetName(typeof(Stage), order.Stage);
-                
-                _context.SaveChanges();
+            order.Stage = (int)newStage;
+            order.StageName = Enum.GetName(typeof(Stage), newStage);
 
-                return View("Index"); 
-            }
-            else
-            {
-                return BadRequest("Invalid newStage value");
-            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
-            public IActionResult OrderType()
+
+        public IActionResult OrderType()
         {
+            ViewBag.orderTypes = _context.OrderTypes.Where(x=>x.IsDeleted==false).ToList();
             return View();
 
         }
+
+
+        public IActionResult Detail(int id)
+        {
+            var result = _context.Orders.Include(x=>x.OrderType).FirstOrDefault(x => x.Id == id);
+            return View(result);
+        }
+       
+
+
         [HttpPost]
         public IActionResult OrderType(OrderTypeDTO orderTypeDTO)
         {
             OrderType orderType = new()
             {
-                OrderName=orderTypeDTO.OrderName
+                OrderName=orderTypeDTO.OrderName,
+                IsDeleted=false
             };
             _context.OrderTypes.Add(orderType);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("OrderType");
+        }
+        [HttpPost]
+        public IActionResult  TypeDelete(int id)
+        {
+            var orderType =  _context.OrderTypes.FirstOrDefault(x=>x.Id==id);
+
+        
+                orderType.IsDeleted= true;
+                _context.SaveChanges();
+
+                return RedirectToAction("OrderType");
+            
+      
+         
         }
 
+
+
     }
+
 }

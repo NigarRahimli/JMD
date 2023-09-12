@@ -1,0 +1,39 @@
+﻿@model Order
+
+<h1>Order Detail</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">OrderType</th>
+            <th scope="col">Created Time</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Message</th>
+            <th scope="col">Stage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.OrderType.OrderName</td>
+            <td>@Model.CreatedDate</td>
+            <td>@Model.Telephone</td>
+            <td>@Model.Email</td>
+            <td>@Model.Message</td>
+            <td>@Model.StageName</td>
+        </tr>
+    </tbody>
+</table>
+
+<form method="post" action="@Url.Action("ChangeStage", "Order", new { orderId = Model.Id })">
+    <label for="newStage">Change Stage:</label>
+    <select name="newStage" id="newStage">
+        <option value="isNew">New</option>
+        <option value="isProcessing">Processing</option>
+        <option value="isCompleted">Completed</option>
+        <option value="isInappropriate">Inapropriate</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -718,6 +718,9 @@ header .navbar_active {
 .contact-section ul li:hover i {
   color: #D82B2B;
 }
+.contact-section .order_overlay {
+  border: 1px solid red;
+}
 
 .swiper {
   width: 100% !important;
@@ -969,7 +972,7 @@ header .navbar_active {
   font-weight: 300;
   line-height: normal;
 }
-.section_order .order_boxes form .boxes_bottom .active .options {
+.section_order .order_boxes form .boxes_bottom .active .optiones {
   display: block;
   margin-top: 20px;
   width: 100%;
@@ -996,7 +999,7 @@ header .navbar_active {
   color: #D82B2B;
   font-size: 20px;
 }
-.section_order .order_boxes form .custom-select .options {
+.section_order .order_boxes form .custom-select .optiones {
   display: none;
   position: absolute;
   background-color: transparent;
@@ -1004,12 +1007,12 @@ header .navbar_active {
   padding: 0;
   height: 130px;
 }
-.section_order .order_boxes form .custom-select .options .option {
+.section_order .order_boxes form .custom-select .optiones .option {
   height: 20%;
   margin: 10px 15px;
   color: #fff;
 }
-.section_order .order_boxes form .custom-select .custom-selec.active .options {
+.section_order .order_boxes form .custom-select .custom-selec.active .optiones {
   display: block;
 }
 .section_order .order_boxes form .textarea_input {
@@ -1031,6 +1034,51 @@ header .navbar_active {
   background-color: #D82B2B;
   border: none;
   color: #fff;
+}
+.section_order .order_boxes .order_overlay {
+  border: 1px solid #D82B2B;
+  background: #231F20;
+  box-shadow: 0px 4px 85px 0px rgba(42, 44, 47, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 162px;
+  text-align: center;
+  display: none;
+}
+.section_order .order_boxes .order_overlay .overlay_text {
+  position: relative;
+}
+.section_order .order_boxes .order_overlay .overlay_text p {
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+}
+.section_order .order_boxes .order_overlay .overlay_text .svg_1 {
+  border-radius: 44px;
+  border: 1px solid #78FD62;
+  width: 25px;
+  height: auto;
+  padding: 7px;
+  margin-left: 20px;
+}
+.section_order .order_boxes .order_overlay .overlay_text .overlay_remove {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 13.414px;
+  height: 13.414px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.section_order .order_boxes .order_overlay_active {
+  display: block !important;
 }
 
 @media (min-width: 768px) {

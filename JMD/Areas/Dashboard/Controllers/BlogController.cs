@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using JMD.Data;
 using JMD.DTOs;
 using JMD.Helpers.SeoHelper;
 using JMD.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JMD.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Dashboard")]
     public class BlogController : Controller
     {

@@ -11,6 +11,7 @@
         public string Message { get; set; }
         public int Stage { get; set; }
         public string StageName { get; set; }
+        public DateTime CreatedDate { get; set; }
 
     }
 }

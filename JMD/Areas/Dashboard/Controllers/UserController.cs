@@ -8,6 +8,7 @@ using System.Security.Claims;
 
 namespace JMD.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Dashboard")]
 
     public class UserController : Controller

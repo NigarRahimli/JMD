@@ -124,25 +124,7 @@
             });
         });
 
-        function CreatePhoto(photoUrl) {
-            const carouselInner = listPictures.querySelector('.carousel-inner');
-            if (!carouselInner) return;
-
-            carouselInner.innerHTML = '';
-
-            for (let a = 0; a < photoUrl.length; a++) {
-                const activeClass = a === 0 ? "active" : "";
-                const carouselItem = `
-                            <div class="carousel-item ${activeClass}">
-                                <img src="${photoUrl[a]}" class="d-block w-100" alt="Product Image">
-                                <input type="hidden"  name="Photo" value="${photoUrl[a]}" />
-                            </div>
-                        `;
-                carouselInner.innerHTML += carouselItem;
-            }
-
-            $('.carousel').carousel();
-        }
+        
     });
 </script>
 

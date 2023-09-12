@@ -1,7 +1,10 @@
+
+
+// header responsive navbar start 
 const bars=document.querySelector(".bars")
 const navbar=document.querySelector(".navbar")
 const remove=document.querySelector(".navbar svg")
-console.log(bars);
+
 bars.addEventListener("click",()=>{
    navbar.classList.add("navbar_active")
 })
@@ -9,9 +12,11 @@ bars.addEventListener("click",()=>{
 remove.addEventListener("click",()=>{
      navbar.classList.remove("navbar_active")
   })
+// header responsive navbar end
 
 
 
+// header language start
   document.addEventListener("click", function (event) {
    if (event.target.closest(".selected-option")) {
      const select = event.target.closest(".custom-select");
@@ -24,22 +29,12 @@ remove.addEventListener("click",()=>{
      });
    }
  });
- 
-//  document.addEventListener("click", function (event) {
-//    const option = event.target.closest(".option");
-//    if (option) {
-//      const allOptions = document.querySelectorAll(".option");
-//      allOptions.forEach(function (opt) {
-//        opt.classList.remove("active");
-//      });
-//      option.classList.add("active");
-//      option.closest(".custom-select").querySelector(".selected-option").textContent = option.textContent;
-     
-
-//    }
-//  });
+ // header language end
 
 
+
+
+// contact start
 document.addEventListener("click", function(event) {
   const option = event.target.closest(".option");
   if (option) {
@@ -56,4 +51,21 @@ document.addEventListener("click", function(event) {
       console.log(customSelect.querySelector(".input_value").value = selectedText); 
   }
 });
+// contact end
  
+
+
+// order start
+const form_botton=document.querySelector(".section_order .order_boxes .form_botton")
+const order_overlay=document.querySelector(".section_order .order_boxes .order_overlay")
+const overlay_remove=document.querySelector(".section_order .order_boxes .order_overlay .overlay_remove")
+
+
+form_botton.addEventListener("click",()=>{
+  order_overlay.classList.add("order_overlay_active")
+})
+
+overlay_remove.addEventListener("click",()=>{
+  order_overlay.classList.remove("order_overlay_active")
+})
+// order end

@@ -4,3 +4,38 @@
     <br />
     <input type="submit" class="btn btn-success" value="Add Order type" />
 </form>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Type Name</th>
+                    <th>Settings</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Type Name</th>
+                    <th>Settings</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var orderType in ViewBag.orderTypes)
+                {
+                    <tr>
+                        <td>@orderType.OrderName</td>
+                        <td>
+
+                            <form method="post" asp-action="TypeDelete" asp-controller="Order">
+                                <input type="hidden" name="id" value="@orderType.Id" />
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

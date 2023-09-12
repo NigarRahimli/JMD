@@ -2,11 +2,13 @@
 using JMD.DTOs;
 using JMD.Models;
 using JMD.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace JMD.Controllers
 {
+   
     public class BlogController : Controller
     {
         private readonly AppDbContext _context;
@@ -17,10 +19,15 @@ namespace JMD.Controllers
         }
         public IActionResult Index()
         {
+            var langcode = Request.Cookies["JMD"];
+            if (Request.Cookies["JMD"] == null)
+            {
+                langcode = "az-Az";
+            }
             HomeBlogVM homeBlogVM = new HomeBlogVM()
             {
-                FavouriteBlogs = GetFavourite("az-AZ"),
-                RecentBlogs=GetRecent("en-US")
+                FavouriteBlogs = GetFavourite(langcode),
+                RecentBlogs=GetRecent(langcode)
             };
             return View(homeBlogVM);
         }

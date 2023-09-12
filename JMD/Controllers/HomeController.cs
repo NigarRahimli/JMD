@@ -34,7 +34,7 @@ namespace JMD.Controllers
 
         public IActionResult Order()
         {
-            ViewBag.OrderTypeList = _context.OrderTypes.ToList();
+            ViewBag.OrderTypeList = _context.OrderTypes.Where(x=>x.IsDeleted==false).ToList();
             return View();
         }
 
@@ -54,6 +54,7 @@ namespace JMD.Controllers
                         OrderTypeId = orderDto.OrderTypeId,
                         Message = orderDto.Message,
                         Stage=(int)Stage.isNew,
+                        CreatedDate=DateTime.Now,
 
 
                         StageName= Enum.GetName(typeof(Stage), Stage.isNew)

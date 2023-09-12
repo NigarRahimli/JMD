@@ -66,7 +66,7 @@ namespace JMD.Areas.Dashboard.Controllers
                 };
 
                 IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);
-                await _userManager.AddToRoleAsync(user, "User");
+                //await _userManager.AddToRoleAsync(user, "User");
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);

@@ -16,6 +16,11 @@
         },
         "runtime": {
           "JMD.dll": {}
+        },
+        "resources": {
+          "en-US/JMD.resources.dll": {
+            "locale": "en-US"
+          }
         }
       },
       "Azure.Core/1.24.0": {

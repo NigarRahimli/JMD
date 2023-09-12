@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="3 ildir fəaliyyət göstərən" xml:space="preserve">
+    <value>He created his own advertising agency called</value>
+  </data>
+  <data name="Ad" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="adlı reklam agentliyini özünə məxsus şəkildə 2020-ci ilə yaradıb və aktivliyi hələ də davam edir. 2023-cü ildə isə JMD adlı brand online mağazasını qurub." xml:space="preserve">
+    <value>, which has been operating for 3 years now since its establishment in 2020, and its activities are still ongoing. In 2023, he also established an online store under the brand name JMD.</value>
+  </data>
+  <data name="AZ" xml:space="preserve">
+    <value>EN</value>
+  </data>
+  <data name="Beynəlxalq üzrə Skateboard Punk Shop NFT kolleksiyası ilə 220-dən çox satış edərək yüksəlişə qalxıb.Kəpənək Effekti Qadınlar Kulubu adlı NFT kolleksiyası (Butterfly Effect Women's Club) isə Azərbaycan və beynəxalq üzrə çox sevilib. Hətta onunla bağlı özəl seminar İyun ayında keçirilib." xml:space="preserve">
+    <value>The International Skateboard Punk Shop NFT collection has seen a significant rise in sales, with over 220 sold. The NFT collection known as "Butterfly Effect Women's Club" has also gained popularity both in Azerbaijan and internationally. In fact, a special seminar related to it was held in June.</value>
+  </data>
+  <data name="E-poçt" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Haqqımda" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="həmçinin motion graphic dizaynerliklə də məşğuldur." xml:space="preserve">
+    <value>is also involved in motion graphic design. </value>
+  </data>
+  <data name="işləri ilə xüsusi emosiyalar ötürməyə çalışır. Dizaynlarında hər zaman izləyicilərlə duyğusal bağı qurmağa meyillənir. Yeniliklərdən digəri isə kvant fizikası ilə dizaynı birləşdirmək olub." xml:space="preserve">
+    <value>is his endeavor to convey unique emotions. In his designs, he always strives to establish an emotional connection with the audience. Another innovation has been merging design with quantum physics.</value>
+  </data>
+  <data name="ləqəbli Ceyhun Məmmədov sosial media ortamında Jeyhun MD (jmd) olaraq tanınır.10 illik bir qrafik dizayn və rəqəmsal sənət təcrübəsi var. 2 ildir ki, NFT kolleksiyalar da yaradır.Həyatı boyunca 4 kitab və 3 qısa metrajlı film çəkmək təcrübəsinə də yiyələnib. Nariman film şirkəti ilə də aktyor üzrə əməkdaşlıq edib. Kontakt home, Mover.az, Novco, Beynəlxalq bank,Kapital bank, Nar kimi yerli şirkətlərlə dizaynerlik üzrə əməkdaşlığı olub. Beynəlxalq şirkətlərdən isə Samsung, Lacoste və hal-hazırda aktiv şəkildə davam edən Durex ilə əməkdaşlıq edir." xml:space="preserve">
+    <value>, also known as Ceyhun Mammadov, is recognized as Jeyhun MD (jmd) in the social media environment. He has 10 years of experience in graphic design and digital art. For the past 2 years, he has also been creating NFT collections. He has gained experience in creating 4 books and 3 short films throughout his life. He has also collaborated with Nariman film company as an actor. He has worked as a designer with local companies such as Kontakt Home, Mover.az, Novco, Beynəlxalq Bank, Kapital Bank, and Nar. From international companies, he is currently collaborating with Samsung, Lacoste, and Durex.</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Order tipi" xml:space="preserve">
+    <value>Order type</value>
+  </data>
+  <data name="Seçin" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Sifariş" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Sifariş et" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="sənətimlə məni kəşf et" xml:space="preserve">
+    <value>discover me with my art</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="Əlaqə" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+</root>
