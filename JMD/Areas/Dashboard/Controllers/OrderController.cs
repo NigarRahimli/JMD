@@ -83,18 +83,28 @@ namespace JMD.Areas.Dashboard.Controllers
         [HttpPost]
         public IActionResult OrderType(OrderTypeDTO orderTypeDTO)
         {
-            OrderType orderType = new()
+            try
             {
-                OrderName=orderTypeDTO.OrderName,
-                IsDeleted=false
-            };
-            _context.OrderTypes.Add(orderType);
-            _context.SaveChanges();
-            return RedirectToAction("OrderType");
+                OrderType orderType = new()
+                {
+                    OrderName = orderTypeDTO.OrderName,
+                    IsDeleted = false
+                };
+                _context.OrderTypes.Add(orderType);
+                _context.SaveChanges();
+                return RedirectToAction("OrderType");
+            }
+
+            catch (Exception ex)
+            {
+                return RedirectToAction("OrderType");
+
+            }
         }
         [HttpPost]
         public IActionResult  TypeDelete(int id)
         {
+          
             var orderType =  _context.OrderTypes.FirstOrDefault(x=>x.Id==id);
 
         

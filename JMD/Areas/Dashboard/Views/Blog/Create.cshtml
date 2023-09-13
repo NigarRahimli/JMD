@@ -100,33 +100,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const productPicture = document.getElementById("productPicture");
-        const listPictures = document.getElementById("listPictures");
 
-        productPicture.addEventListener("change", function () {
-            var datas = new FormData();
-
-            for (let i = 0; i < productPicture.files.length; i++) {
-                datas.append("photoUrl", productPicture.files[i]);
-            }
-
-            $.ajax({
-                type: 'POST',
-                contentType: false,
-                processData: false,
-                url: "/picture/uploadpicture",
-                data: datas,
-                success: function (e) {
-                    CreatePhoto(e);
-                }
-            });
-        });
-
-        
-    });
-</script>
 
 @section CKE{
     <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
