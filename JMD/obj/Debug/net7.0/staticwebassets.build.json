@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "No3wDejE3haKsz0f8ewspP9YbOnZU71x45OAoe+fNWw=",
+  "Hash": "LmK1YfqM/vhO9rPiXK0wSZc/yVQW/q093V7m1bO6RtE=",
   "Source": "JMD",
   "BasePath": "_content/JMD",
   "Mode": "Default",
@@ -32026,6 +32026,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\Blog\\69d6db2e-e126-435c-af79-815ced16177a.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\769ae05a-dc5d-406a-bcdb-50fa195df27b.png",
+      "SourceId": "JMD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\",
+      "BasePath": "_content/JMD",
+      "RelativePath": "uploads/Blog/769ae05a-dc5d-406a-bcdb-50fa195df27b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Blog\\769ae05a-dc5d-406a-bcdb-50fa195df27b.png"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\7a6c93ac-eec3-4600-9ef8-f71aad6b56b1.jfif",

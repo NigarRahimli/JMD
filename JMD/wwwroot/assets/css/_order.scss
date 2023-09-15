@@ -33,20 +33,25 @@
 
                .boxes_bottom .active {
                     .options {
+                         position: relative;
                          display: block;
                          margin-top: 20px;
                          width: 100%;
                          border: 1px solid #D82B2B;
-                         height: auto;
+                         max-height: 200px;
                          padding: 0 10px;
+                         overflow-y: auto;
+                         scrollbar-gutter: var(--gutter, auto);
 
-
+                         &::-webkit-scrollbar {
+                              width: 7px; 
+                            }
+                            &::-webkit-scrollbar-thumb {
+                              background-color:#fff; 
+                              border-radius: 20px;
+                            }
                     }
-
-                    .textarea_input {
-                         margin-top: 270px !important;
-
-                    }
+                    
 
                }
 
@@ -90,7 +95,7 @@
 
                          .option {
                               height: 20%;
-                              margin: 10px 15px;
+                              margin: 15px 15px;
                               color: #fff;
                          }
                     }

@@ -1,12 +1,10 @@
+C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\appsettings.json
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.staticwebassets.runtime.json
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.exe
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.deps.json
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.runtimeconfig.json
-C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.dll
-C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.pdb
-C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\en-US\JMD.resources.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\Humanizer.dll
@@ -83,4 +81,6 @@ C:\Users\User\Desktop\JMD\JMD\JMD\obj\Debug\net7.0\JMD.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\obj\Debug\net7.0\refint\JMD.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\obj\Debug\net7.0\JMD.pdb
 C:\Users\User\Desktop\JMD\JMD\JMD\obj\Debug\net7.0\JMD.genruntimeconfig.cache
+C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\JMD.pdb
+C:\Users\User\Desktop\JMD\JMD\JMD\bin\Debug\net7.0\en-US\JMD.resources.dll
 C:\Users\User\Desktop\JMD\JMD\JMD\obj\Debug\net7.0\ref\JMD.dll

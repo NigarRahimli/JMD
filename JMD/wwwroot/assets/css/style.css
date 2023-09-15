@@ -973,15 +973,22 @@ header .navbar_active {
   line-height: normal;
 }
 .section_order .order_boxes form .boxes_bottom .active .options {
+  position: relative;
   display: block;
   margin-top: 20px;
   width: 100%;
   border: 1px solid #D82B2B;
-  height: auto;
+  max-height: 200px;
   padding: 0 10px;
+  overflow-y: auto;
+  scrollbar-gutter: var(--gutter, auto);
 }
-.section_order .order_boxes form .boxes_bottom .active .textarea_input {
-  margin-top: 270px !important;
+.section_order .order_boxes form .boxes_bottom .active .options::-webkit-scrollbar {
+  width: 7px;
+}
+.section_order .order_boxes form .boxes_bottom .active .options::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 20px;
 }
 .section_order .order_boxes form .custom-select {
   position: relative;
@@ -1009,7 +1016,7 @@ header .navbar_active {
 }
 .section_order .order_boxes form .custom-select .options .option {
   height: 20%;
-  margin: 10px 15px;
+  margin: 15px 15px;
   color: #fff;
 }
 .section_order .order_boxes form .custom-select .custom-selec.active .options {
