@@ -199,7 +199,7 @@ namespace JMD.Areas.Dashboard.Controllers
                         {
                             var newBlogLang = new BlogLanguage
                             {
-                                LanguageCode = blogUpdateDTO.BlogLanguages[i].LanguageCode ?? "az-AZ",
+                                LanguageCode = (blog.BlogLangs[i-1].LanguageCode == "az-AZ"?"en-US": "az-AZ"),
                                 ShortDesc = blogUpdateDTO.BlogLanguages[i].ShortDesc,
                                 Description = blogUpdateDTO.BlogLanguages[i].Description,
                                 Name = blogUpdateDTO.BlogLanguages[i].Title,
@@ -234,28 +234,8 @@ namespace JMD.Areas.Dashboard.Controllers
                 return View(blogUpdateDTO);
             }
         }
-
-        [HttpPost]
-        public IActionResult Delete(int id)
-        {
-            try
-            {
-                var blog = _appDbContext.Blogs.Include(b => b.BlogLangs).FirstOrDefault(b => b.Id == id);
-
-                if (blog != null)
-                {
-                    blog.IsDeleted = true;
-                    _appDbContext.SaveChanges();
-                }
-
-                return RedirectToAction("Index");
-            }
-            catch (Exception ex)
-            {
-                return View("Error");
-            }
+    
         }
 
 
     }
-}

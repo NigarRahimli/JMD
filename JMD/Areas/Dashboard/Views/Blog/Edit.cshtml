@@ -19,18 +19,22 @@
                             <div class="col-lg-12">
                                 <div class="form-group mt-3">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        @{
+                                            var firstLanguage = Model.BlogLanguages.ElementAtOrDefault(0);
+
+                                        }
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                                     data-bs-target="#home" type="button" role="tab" aria-controls="home"
                                                     aria-selected="true">
-                                                Az
+                                                @(firstLanguage.LangCode == "az-AZ" ? "Az" : "En")
                                             </button>
                                         </li>
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
                                                     data-bs-target="#profile" type="button" role="tab"
                                                     aria-controls="profile" aria-selected="false">
-                                                En
+                                                @(firstLanguage.LangCode == "az-AZ" ? "En" : "Az")
                                             </button>
                                         </li>
                                     </ul>
@@ -40,13 +44,13 @@
                                             <div class="form-group mt-3">
                                                 <input asp-for="BlogLanguages[0].Title" type="text"
                                                        class="form-control form-control-user"
-                                                       placeholder="Write Azerbaijan name">
+                                                       placeholder="Write @(firstLanguage.LangCode == "az-AZ" ? "Azerbaijan" : "English") name">
                                             </div>
                                             <div class="form-group mt-3">
                                                 <textarea asp-for="BlogLanguages[0].ShortDesc" type="text"
                                                           maxlength="300"
                                                           class="form-control"
-                                                          placeholder="Write Azerbaijan description "
+                                                          placeholder="Write Write @(firstLanguage.LangCode == "az-AZ" ? "Azerbaijan" : "English") description "
                                                           rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
@@ -60,13 +64,13 @@
                                             <div class="form-group mt-3">
                                                 <input asp-for="BlogLanguages.ElementAtOrDefault(1).Title"name="Bloglanguages[1].Title" type="text"
                                                        class="form-control form-control-user"
-                                                       placeholder="Write English name">
+                                                       placeholder="Write @(firstLanguage.LangCode == "az-AZ" ? "English" : "Azerbaijan") name">
                                             </div>
                                             <div class="form-group mt-3">
                                                 <textarea asp-for="BlogLanguages.ElementAtOrDefault(1).ShortDesc" name="BlogLanguages[1].ShortDesc" type="text"
                                                           maxlength="300"
                                                           class="form-control"
-                                                          placeholder="Write English description "
+                                                          placeholder="Write @(firstLanguage.LangCode == "az-AZ" ? "English" : "Azerbaijan") description "
                                                           rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
@@ -75,7 +79,15 @@
                                                           class="form-control" rows="30"></textarea>
                                             </div>
                                         </div>
-                                        <!-- Other tab content here -->
+                                        <div class="form-group m-aouto">
+                                            <label for="IsDeleted">Deleted</label>
+                                            <input asp-for="IsDeleted" class="" id="IsDeleted" placeholder="IsDeleted">
+                                        </div>
+                                        <br>
+                                        <div class="form-group m-aouto">
+                                            <label for="IsFavourite">IsFavourite</label>
+                                            <input asp-for="IsFavourite" type="checkbox" id="IsFavourite" placeholder="IsFavourite">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

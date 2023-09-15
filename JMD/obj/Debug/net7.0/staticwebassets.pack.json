@@ -7497,12 +7497,20 @@
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\00a67fee-320a-41a7-8d4f-4c4b0c07f4fc.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\00a67fee-320a-41a7-8d4f-4c4b0c07f4fc.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\06d2ac09-11ce-47bf-8794-eabde4a17a3a.png",
       "PackagePath": "staticwebassets\\uploads\\Blog\\06d2ac09-11ce-47bf-8794-eabde4a17a3a.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\199537a0-4208-4afd-b107-f6f817c2ff40.jfif",
       "PackagePath": "staticwebassets\\uploads\\Blog\\199537a0-4208-4afd-b107-f6f817c2ff40.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\1ac321bd-2e0f-4a3d-824e-a784d88b2637.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\1ac321bd-2e0f-4a3d-824e-a784d88b2637.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\1c798af9-53b5-43a7-8923-c242ddda7532.jfif",
@@ -7513,8 +7521,20 @@
       "PackagePath": "staticwebassets\\uploads\\Blog\\32254064-a9a2-4f68-8b2a-0ebf379cf11e.PNG"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\3c23d9a7-e8a5-45f2-ac8b-aee53512734b.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\3c23d9a7-e8a5-45f2-ac8b-aee53512734b.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\56e955bb-d855-49da-82b6-e8d550595f00.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\56e955bb-d855-49da-82b6-e8d550595f00.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\571bb5ad-f99d-4b74-966d-cbfb17a5b00f.PNG",
       "PackagePath": "staticwebassets\\uploads\\Blog\\571bb5ad-f99d-4b74-966d-cbfb17a5b00f.PNG"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\5cab05cb-0995-44e2-ad82-52e94121f86d.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\5cab05cb-0995-44e2-ad82-52e94121f86d.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\613cb5ac-c291-4ac8-af5a-103e2d221ad6.jfif",
@@ -7529,8 +7549,16 @@
       "PackagePath": "staticwebassets\\uploads\\Blog\\69d6db2e-e126-435c-af79-815ced16177a.jpeg"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\6afd83ec-04d8-498c-a2b6-d57afdb6dd35.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\6afd83ec-04d8-498c-a2b6-d57afdb6dd35.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\769ae05a-dc5d-406a-bcdb-50fa195df27b.png",
       "PackagePath": "staticwebassets\\uploads\\Blog\\769ae05a-dc5d-406a-bcdb-50fa195df27b.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\799e9ae6-d6db-438d-a548-69f8194e4c5e.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\799e9ae6-d6db-438d-a548-69f8194e4c5e.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\7a6c93ac-eec3-4600-9ef8-f71aad6b56b1.jfif",
@@ -7557,8 +7585,16 @@
       "PackagePath": "staticwebassets\\uploads\\Blog\\b8db90b3-0090-47f0-a12d-6cb2e1fc4380.jfif"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\bc70677e-cb0b-4f8e-8344-ed47d6b4d6b7.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\bc70677e-cb0b-4f8e-8344-ed47d6b4d6b7.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\ca92f529-ec11-4b42-a21a-9fb9d224d9c7.jfif",
       "PackagePath": "staticwebassets\\uploads\\Blog\\ca92f529-ec11-4b42-a21a-9fb9d224d9c7.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\d7731d8e-6a76-4c08-928e-750adff13479.png",
+      "PackagePath": "staticwebassets\\uploads\\Blog\\d7731d8e-6a76-4c08-928e-750adff13479.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\JMD\\JMD\\JMD\\wwwroot\\uploads\\Blog\\db88d801-3a32-4e64-a98b-2b22a604a32d.jfif",
